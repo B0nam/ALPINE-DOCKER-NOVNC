@@ -26,7 +26,7 @@ ENV \
     RUN_XTERM=yes \
     RUN_FLUXBOX=yes
 
-COPY . /app
+ADD . /app
 
 CMD ["/usr/bin/supervisord", "-c", "/app/supervisord.conf"]
 EXPOSE 6080
