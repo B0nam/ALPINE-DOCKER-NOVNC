@@ -19,10 +19,15 @@ jobs:
           - name: Build Alpine-novnc Base
             run: docker build -t alpine-novnc:base Base/.
 
+          - name: Push Alpine-novnc Base
+            run: |
+              docker tag alpine-novnc:base "${{ secrets.DOCKERHUB_USERNAME }}/alpine-novnc:base"
+              docker push "${{ secrets.DOCKERHUB_USERNAME }}/alpine-novnc:base"
+
           - name: Build Alpine-novnc Fluxbox
             run: docker build -t alpine-novnc:fluxbox Fluxbox/.
 
-          - name: Push built images
+          - name: Push Alpine-novnc Fluxbox
             run: |
-              docker tag alpine-novnc:base "${{ secrets.DOCKERHUB_USERNAME }}/alpine-novnc:base"
               docker tag alpine-novnc:fluxbox "${{ secrets.DOCKERHUB_USERNAME }}/alpine-novnc:fluxbox"
+              docker push "${{ secrets.DOCKERHUB_USERNAME }}/alpine-novnc:fluxbox"
