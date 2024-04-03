@@ -22,11 +22,12 @@ ENV \
     DISPLAY=:0.0 \
     DISPLAY_WIDTH=1024 \
     DISPLAY_HEIGHT=768 \
+    X11_PASSWORD=Abacate123@ \
     RUN_XTERM=yes \
     RUN_FLUXBOX=yes
 
 COPY . /app
 
-#CMD ["/usr/bin/supervisord", "-c", "/app/supervisord.conf"]
+CMD ["/usr/bin/supervisord", "-c", "/app/supervisord.conf"]
 EXPOSE 6080
 EXPOSE 5900
