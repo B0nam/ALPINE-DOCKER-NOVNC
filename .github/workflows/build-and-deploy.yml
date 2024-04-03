@@ -17,10 +17,10 @@ jobs:
               password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
           - name: Build Alpine-novnc Base
-            run: docker build -t alpine-novnc:base /Base/.
+            run: docker build -t alpine-novnc:base Base/.
 
           - name: Build Alpine-novnc Fluxbox
-            run: docker build -t alpine-novnc:fluxbox /Fluxbox/.
+            run: docker build -t alpine-novnc:fluxbox Fluxbox/.
 
           - name: Push built images
             run: |
