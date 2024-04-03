@@ -30,4 +30,3 @@ COPY . /app
 
 CMD ["/usr/bin/supervisord", "-c", "/app/supervisord.conf"]
 EXPOSE 6080
-EXPOSE 5900
