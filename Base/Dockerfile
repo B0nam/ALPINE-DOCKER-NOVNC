@@ -24,7 +24,7 @@ ENV \
     X11_PASSWORD=Abacate123@ \
     RUN_XTERM=yes
 
-COPY . /app
+ADD . /app
 
 CMD ["/usr/bin/supervisord", "-c", "/app/supervisord.conf"]
 
